@@ -10,4 +10,5 @@
 // moduleDetection를 tsconfig.json 에서 force로 설정하면 해당 에러는 발생하지 않는다.
 // moduleDetection : force는 컴파일시 파일에 export {}; 를 자동생성한다.
 
-const a = 1;
+const a: number = 1;
+const b: string = 'test';
