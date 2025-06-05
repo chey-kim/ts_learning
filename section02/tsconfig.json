@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // 컴파일 시 es 버전
+    "module": "ESNext",
+    "skipLibCheck": true, // 불필요한 파일의 타입 검사 생략 설정
+    "outDir": "dist", // compile 시 생성되는 js file path 설정
+    "strict": true, // 엄격한 타입 검사
+    "moduleDetection": "force", // 컴파일 시 모든 모듈 export
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["src"],
+}
