@@ -1,67 +1,67 @@
-// Unknown type
-// 모든 타입의 최상위 타입
-function unknownExam() {
-    // up casting 가능
-    let a: unknown;
-    let b: unknown = 'hello';
-    let c: unknown = 10;
-    let d: unknown = true;
-    let e: unknown = {};
-    let f: unknown = null;
+// 기본 타입간의 호환성
+let num1: number = 10;
+let num2: 10 = 10;
+num1 = num2;
 
-    // down casting 불가
-    // let unknownVar: unknown;
-    // let num: number = unknownVar;
+// 객체 타입간의 호환성
+// -> 어떤 객체 타입을 다른 객체 타입으로 취급해도 괜찮은가?
+// 객체 타입은 프로퍼티를 기준으로 슈퍼타입과 서브타입이 나뉜다.
+type Animal = {
+    name: string;
+    color: string;
 }
 
-// Never type
-// 모든 타입의 서브 타입 (최하위 타입)
-// 모든 타입의 부분 집합 (공집합)
-function neverExam() {
-    function neverFunc(): never {
-        while (true) {
-        }
-    }
-
-    // 가능
-    let num: number = neverFunc();
-    let str: string = neverFunc();
-    let bool: boolean = neverFunc();
-    let obj: object = neverFunc();
-    let arr: any[] = neverFunc();
-    let nullVal: null = neverFunc();
-    let undefVal: undefined = neverFunc();
-    let neverVal: never = neverFunc();
-
-    // 불가
-    // let never1: never = 10;
-    // let never2: never = 'string';
+type Dog = {
+    name: string;
+    color: string;
+    breed: string;
 }
 
-
-// Void type
-// void -> undefined
-function voidExam() {
-    function voidFunc(): void {
-        console.log('hello');
-        return undefined;
-    }
-
-    let voidVar: void = undefined;
+let animal: Animal = {
+    name: '기린',
+    color: 'brown',
 }
 
-
-// any type
-// 모든 타입의 슈퍼타입 서브타입으로 존재한다. 단 never 빼고
-function anyExam() {
-    let unknownVar: unknown;
-    let anyVar: any;
-    let undefinedVal: undefined = undefined;
-    let neverVal: never;
-
-    anyVar = unknownVar;
-    undefinedVal = anyVar;
-
-    // never 는 불가
-    // neverVal = anyVar;
+let dog: Dog = {
+    name: '돌돌이',
+    color: 'brown',
+    breed: '진도',
 }
+
+animal = dog;
+
+// 불가
+// dog = animal;
+
+
+type Book = {
+    name: string;
+    price: number;
+};
+
+type ProgrammingBook = {
+    name: string;
+    price: number;
+    skill: string;
+};
+
+let book: Book;
+let programmingBook: ProgrammingBook = {
+    name: '한입크기',
+    price: 10000,
+    skill: 'javascript',
+};
+
+book = programmingBook;
+
+// 초과 프로퍼티 검사
+let boo2: Book = {
+    name: '한입크기',
+    price: 10000,
+    // skill: 'javascript',
+};
+
+// 가능
+let book3: Book = programmingBook;
+function func(book: Book) {}
+func(programmingBook);
