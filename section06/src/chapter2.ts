@@ -2,26 +2,26 @@
 // public, private, protected
 
 class Employee {
-    private _name: string;
-    private _age: number;
-    protected _position: string;
+    private name: string;
+    private age: number;
+    protected position: string;
 
     constructor(name: string, age: number, position: string) {
-        this._name = name;
-        this._age = age;
-        this._position = position;
+        this.name = name;
+        this.age = age;
+        this.position = position;
     }
 
     work() {
         console.log('work');
     }
 
-    get name(): string {
-        return this._name;
+    public getName(): string {
+        return this.name;
     }
 
-    set name(value: string) {
-        this._name = value;
+    public setName(value: string) {
+        this.name = value;
     }
 }
 
@@ -36,6 +36,6 @@ class ExecutiveOfficer extends Employee {
     }
 
     public setPosition(position: string) {
-        this._position = position;
+        this.position = position;
     }
 }
