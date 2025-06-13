@@ -35,10 +35,10 @@ function forEach<T>(arr: T[], callback: (item: T) => void) {
 }
 
 forEach(arr2, (item) => {
-        console.log(item.toFixed());
+        // console.log(item.toFixed());
     }
 )
 
 forEach(['123', '456'], (item) => {
-    console.log(item.toUpperCase());
+    // console.log(item.toUpperCase());
 });
