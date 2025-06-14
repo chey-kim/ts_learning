@@ -18,8 +18,7 @@ map([1, 2, 3], (item) => {
     return item * 2;
 });
 
-let map1 = map(['hi', 'hello', 'hey'], (item) => parseInt(item));
-
+let map1 = map(['hi', 'hello', 'hey'], (item) => parseInt(item))
 
 // forEach
 
