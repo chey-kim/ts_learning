@@ -72,7 +72,7 @@ function goToSchool(user: User<Student>) {
     // }
 
     const school = user.profile.school;
-    console.log(`${school} 등교`);
+    // console.log(`${school} 등교`);
 }
 
 const devUser: User<Developer> = {
