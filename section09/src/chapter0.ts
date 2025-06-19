@@ -31,6 +31,6 @@ function removeSpaces<T>(text: any) {
 
 
 let result = removeSpaces("hello world chey");
-result.toUpperCase();
+// result.toUpperCase();
 
 let result2 = removeSpaces(undefined);
