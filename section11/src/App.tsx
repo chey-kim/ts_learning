@@ -3,6 +3,7 @@ import React, {useReducer, useRef} from "react";
 import Editor from "./components/Editor";
 import {Todo} from "./types";
 import TodoItem from "./components/TodoItem";
+import _ from "lodash";
 
 type Action = {
     type: "CREATE";
