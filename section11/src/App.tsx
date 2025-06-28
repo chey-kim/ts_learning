@@ -14,6 +14,12 @@ type Action = {
 } | {
     type: "DELETE",
     id: number
+} | {
+    type: "UPDATE",
+    data: {
+        id: number,
+        content: string
+    }
 }
 
 function reducer(state: Todo[], action: Action) {
