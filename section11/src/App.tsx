@@ -14,6 +14,12 @@ type Action = {
 } | {
     type: "DELETE",
     id: number
+} | {
+    type: "UPDATE",
+    data: {
+        id: number,
+        content: string
+    }
 }
 
 function reducer(state: Todo[], action: Action) {
@@ -34,7 +40,7 @@ export const TodoDispatchContext = React.createContext<{
 export function useTodoDispatch() {
     const dispatch = React.useContext(TodoDispatchContext);
     if (!dispatch) {
-        throw new Error('todo dispatch context 에 문제가 있습니다.');
+        throw new Error('todo dispatch context');
     }
     return dispatch;
 }
